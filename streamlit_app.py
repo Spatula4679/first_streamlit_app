@@ -29,7 +29,7 @@ fruit_choice = streamlit.text_input('What fruit would you like information about
 streamlit.write('The user entered ', fruit_choice)
 
 
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + "kiwi") #separating the base url and the fruit name.
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice) #separating the base url and the fruit name.
 # Normalises the JSON data received
 fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # Displays the data in a tabular format in streamlit
